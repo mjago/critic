@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#fswatch . 'crystal play.cr'
+
+fswatch --timestamp -e ".*" -i ".cr$" -l 0.2 play.cr | (while read; do clear && ../crystal-0.20.1-1/bin/crystal play.cr --release ; done)
